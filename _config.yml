@@ -54,6 +54,13 @@ disqus:
   comments: True
   shortname: https://ldhun319.github.io/
 
+# Math equation
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
 # Specify the author for blog posts
 author:
   name: Songzi Vong
