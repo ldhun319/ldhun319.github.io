@@ -50,7 +50,9 @@ sass:
 # google_analytics: UA-000000-0
 
 # Replace this value and uncomment to enable Disqus
-# disqus: xxxxxx
+disqus: 
+  comments: True
+  shortname: https://ldhun319.github.io/
 
 # Specify the author for blog posts
 author:
