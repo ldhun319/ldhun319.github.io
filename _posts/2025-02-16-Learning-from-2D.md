@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[CVPR 2023] Learning from 2D: Contrastive Pixel-to-Point Knowledge Transfer for 3D Pretraining'
-date: 2025-02-16 15:00 +0800
+date: 2025-02-15 15:00 +0800
 last_modified_at: 2025-02-16 15:00 +0800
 tags: [jekyll theme, jekyll, tutorial]
 toc:  true
