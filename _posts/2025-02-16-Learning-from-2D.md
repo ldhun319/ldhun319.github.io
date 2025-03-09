@@ -1,7 +1,11 @@
 ---
 layout: post
 title: '[CVPR 2023] Learning from 2D: Contrastive Pixel-to-Point Knowledge Transfer for 3D Pretraining'
+<<<<<<< HEAD
 date: 2025-02-16 15:00 +0800
+=======
+date: 2025-02-15 15:00 +0800
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 last_modified_at: 2025-02-16 15:00 +0800
 tags: [jekyll theme, jekyll, tutorial]
 toc:  true
@@ -13,6 +17,12 @@ toc:  true
 - 이전 연구는 2D 자기지도 학습 패러다임을 3D로 성공적으로 가져왔지만 2D CNN에서 추출한 의미 단서와 같은 2D 의미 정보를 무시함.
 - 엄청난 양의 2D 레이블이 지정된 데이터 세트는 3D 데이터 세트보다 훨씬 더 크고 다양하며, 2D 네트워크 아키텍처는 지난 몇 년 동안 널리 연구되고 잘 개발됨.
 - 따라서 우리는 잘 훈련된 2D 네트워크에 대한 지식이 가치 있고 유익하다고 믿음. 이를 통해 추가 레이블 데이터 없이 좋은 초기 가중치를 학습할 수 있는 3D 네트워크 신호를 제공할 수 있음.
+<<<<<<< HEAD
+=======
+
+![Image](https://github.com/user-attachments/assets/6738df98-85a6-43d3-9038-ebd67f8bfc54)
+
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 - 본 논문의 아이디어는 이전의 2D-3D 융합 연구들과도 관련이 있으며, 이는 2D 네트워크에서 추출된 기능이 3D 대응물을 보완할 수 있음을 시사함.
 - 이 발견은 사전 훈련으로 2D에서 학습하면 3D 데이터만으로는 쉽게 학습할 수 없는 추가 정보를 가져올 수 있다는 동기를 부여.
 - 이 논문의 핵심 문제 : 데이터 속성과 이종 네트워크 구조의 차이를 고려할 때 추가 레이블 데이터를 사용하지 않고 사전 훈련된 2D 네트워크를 3D로 효과적으로 전송하는 방법은 무엇입니까? ⇒ 그 해답은 Knowledge distillation이라고 밝힘.
@@ -53,7 +63,12 @@ toc:  true
 - 파인 튜닝 단계에서 다양한 3D 다운스트림 작업을 위해 지도학습 방식으로 3D 네트워크를 파인 튜닝
 설명을 위해 방법을 (1) the pixel-to-point design, (2) the upsampling feature projection layer, (3) point-pixel NCE loss 이렇게 세 부분으로 나눔.
 
+<<<<<<< HEAD
 (모델 사진)
+=======
+![Image](https://github.com/user-attachments/assets/71455765-df9e-4aff-8d04-f0351e28bdbf)
+
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 
 - PPKT 사전 학습을 위해 저비용 RGB-D 카메라로 수집된 라벨 없는 RGB-D 이미지 데이터셋을 사용하며, 이때 RGB-D 데이터셋은 정렬된 RGB 이미지와 깊이 맵으로 구성
 - 카메라 내부 파라미터를 이용해 역투영 함수를 통해 2D-3D 매핑을 수행하여 포인트 클라우드를 생성
@@ -62,11 +77,18 @@ toc:  true
 
 ###  Knowledge transfer from pixels to points
 
+<<<<<<< HEAD
 #### 기존 방법들의 문제
+=======
+
+#### 기존 방법들의 문제
+
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 - 단순 KD는 2D-3D간에는 작동이 어려움.
 - 3D 데이터셋이 많은 포인트를 가지지만 인스턴스 수가 적어 글로벌 표현 학습이 어려움을 겪음
 - 글로벌 풀링 연산은 공간 정보 손실을 야기하며, 일반적인 3D 인코더-디코더 네트워크 백본에서는 인코더만 사전 학습되고 디코더는 무시
 - 실내 환경의 RGB-D 프레임은 유사한 글로벌 컨텍스트를 포함하여 특징 공간에서 변별력이 떨어짐
+<<<<<<< HEAD
 #### 제안 방법
 - 2D 이미지의 픽셀 수준과 3D 포인트 클라우드의 포인트 수준 간의 지식 전이를 제안하며, 네트워크로 인코딩된 2D 및 3D 특징 표현을 정렬
 - RGB 이미지 x와 깊이 맵 d가 주어졌을 때, 3D 특징 표현 z_3D와 2D-3D 매핑된 2D 표현 z_2D를 정의하고 동일한 임베딩 공간으로 매핑
@@ -76,6 +98,19 @@ toc:  true
 ### Upsampling feature projection layer (UPL)
 
 (그림 추가)
+=======
+
+
+#### 제안 방법
+
+- 2D 이미지의 픽셀 수준과 3D 포인트 클라우드의 포인트 수준 간의 지식 전이를 제안하며, 네트워크로 인코딩된 2D 및 3D 특징 표현을 정렬
+- RGB 이미지 x와 깊이 맵 d가 주어졌을 때, 3D 특징 표현 z_3D와 2D-3D 매핑된 2D 표현 z_2D를 정의하고 동일한 임베딩 공간으로 매핑
+
+![Image](https://github.com/user-attachments/assets/da36f23e-ffd0-42d4-aba1-9c05f857f2b9)
+
+### Upsampling feature projection layer (UPL)
+
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 - ImageNet 분류 네트워크의 특징 맵의 낮은 공간 해상도로 인해 대조적인 픽셀 간 지식 전달이 어려움.
 - 따라서 이 문제를 해결하기 위해 2D용 업샘플링 기능 투영 레이어 g를 사용
 - 구체적으로, 2D CNN의 마지막 레이어의 특징 맵에 1×1 컨볼루션과 이중선형 업샘플링을 적용(마치 디코더 헤드 처럼)
@@ -85,7 +120,12 @@ toc:  true
 - Point-pixel NCE 손실(PPNCE)을 사용하여 대응되는 픽셀과 포인트 표현 간의 상대적 거리를 최소화하는 학습 목표를 설정
 - PP-NCE 손실은 동일한 3D 좌표를 공유하는 픽셀과 포인트를 끌어당기고, 다른 2D 특징으로부터 3D 특징을 분리하여 특징 공간을 형성
 - 메모리 문제를 고려하여 고정된 수의 포인트와 픽셀을 샘플링하여 손실을 계산하며, 메모리 뱅크는 사용하지 않음.
+<<<<<<< HEAD
 (수식 추가)
+=======
+
+![Image](https://github.com/user-attachments/assets/7c7c319b-4101-4c1e-b347-844a60ab4e5a)
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 
 ## EXPERIMENT
 
@@ -94,19 +134,32 @@ toc:  true
 2) 3D 의미론적 분할 및 3D 객체 감지를 포함하여 감독 방식으로 대상 다운스트림 작업에 대한 모델을 파인 튜닝
 3) 테스트 데이터에 대한 파인 튜닝 성능을 평가
 
+<<<<<<< HEAD
 #### Experimental Setup of 3D Pretraining
+=======
+### Experimental Setup of 3D Pretraining
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 
 - 사전 훈련된 2D 신경망 : ResNet [27]을 2D 백본으로 선택
 - 3D 네트워크 : Sparse Residual 3D U-Net 34(SR-UNet34) 를 채택
 - VoteNet [80] 모듈을 부착하여 3D 객체 감지도 수행
 
+<<<<<<< HEAD
 #### 데이터셋
 
+=======
+### 데이터셋
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 - ScanNet 데이터세트의 RGB-D 이미지를 사용
 - 707개의 개별 공간에 대한 1513개의 실내 스캔이 포함
 - 순차적 RGB-D 데이터에서 25프레임마다 하위 샘플링을 수행하여 총 약 100,000프레임을 생성
 
+<<<<<<< HEAD
 #### Baseline
+=======
+
+### Baseline
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 
 <table>
   <thead>
@@ -152,7 +205,11 @@ toc:  true
   </tbody>
 </table>
 
+<<<<<<< HEAD
 #### Training details of PPKT
+=======
+### Training details of PPKT
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 
 - upsampling feature projection layer : 2D ResNet50 layer4 output
 - 3D feature projection layer: the last layer feature of SR-Unet
@@ -163,12 +220,17 @@ toc:  true
 
 ### Fine-tune on S3DIS Semantic Segmentation
 
+<<<<<<< HEAD
 (표, 또는 그림)
+=======
+![Image](https://github.com/user-attachments/assets/eac8c40e-dd75-4551-a1eb-515acfa5c646)
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
 
 - 2D 베이스라인(Global KD, CRD, Gupta et al.)을 통한 전역 학습 성능은 처음부터 훈련하는 것과 유사하며, 이는 이러한 기준선의 사전 훈련 효과가 제한적임. 
 - 인코더-디코더를 사전 훈련하는 것이 도움이 됨. 
 - 이러한 기준선과 방법은 모두 동일한 ImageNet 사전 훈련된 2D 교사 네트워크를 사용하므로 2D 지식을 효과적으로 전달하는 데 픽셀 간 설계가 중요
 
+<<<<<<< HEAD
 ### Fine-tune on SUN RGB-D Object Detection
 
 (표, 또는 그림)
@@ -176,3 +238,14 @@ toc:  true
 ### Ablation study
 
 (표, 또는 그림)
+=======
+### Fine-tune on SUN RGB-D Object Detection and Scannet
+
+![image](https://github.com/user-attachments/assets/c7a5ea1e-16d3-4a85-98ed-1163c5c14657)
+
+
+### Ablation study
+
+![image](https://github.com/user-attachments/assets/710f0873-6ff7-4ccf-917f-957fdc5358af)
+
+>>>>>>> 94ad75661fc2fd13dc874487504bd1be3a1b0867
